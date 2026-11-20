@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nome do produto | Loja oficial</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/galeria.js" defer></script>
+  <script src="assets/js/video.js" defer></script>
+</head>
+<body>
+  <header class="store-header">
+    <div class="shell top">
+      <a class="brand" href="index.html">Nome do produto</a>
+      <nav aria-label="Navegação principal">
+        <a class="nav-link" href="#demonstracao">Demonstração</a>
+        <a class="nav-link" href="#detalhes">Detalhes</a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="gallery">
+        <div class="gallery-stage">
+          <img id="product-image" src="assets/img/produto.jpg" alt="Vista principal do produto" hidden>
+          <div id="image-placeholder" class="image-placeholder">Foto principal do produto</div>
+        </div>
+        <div class="thumbs" aria-label="Fotos do produto">
+          <button type="button" data-file="produto.jpg" data-label="Foto principal do produto" aria-pressed="true">Principal</button>
+          <button type="button" data-file="detalhe.jpg" data-label="Detalhe do produto" aria-pressed="false">Detalhe</button>
+          <button type="button" data-file="uso.jpg" data-label="Produto em uso" aria-pressed="false">Em uso</button>
+        </div>
+      </div>
+      <div class="purchase">
+        <h1 id="titulo">Nome do produto</h1>
+        <p class="price">US$ 49,00</p>
+        <p class="lede">Apresente o produto em poucas linhas. Conte para quem ele foi criado e o que o cliente recebe com a compra.</p>
+        <a class="button" href="checkout.html">Comprar agora</a>
+        <div class="product-details" id="detalhes">
+          <details open><summary>O que está incluído</summary><p>Liste os itens incluídos na compra.</p></details>
+          <details><summary>Como funciona</summary><p>Descreva como o cliente usa o produto.</p></details>
+          <details><summary>Envio e entrega</summary><p>Informe as condições de entrega ou de acesso.</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="demo" id="demonstracao" aria-labelledby="demo-title">
+      <div><h2 id="demo-title">Veja o produto em ação</h2></div>
+      <div class="video-panel">
+        <div class="video-stage">
+          <button class="play" id="play" type="button" aria-label="Reproduzir vídeo de apresentação">▶</button>
+          <video id="vsl" controls playsinline hidden aria-label="Vídeo de apresentação"></video>
+        </div>
+        <p class="notice" id="video-status" role="status" hidden></p>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer">Nome do produto</footer>
+</body>
+</html>
