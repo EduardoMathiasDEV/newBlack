@@ -1,0 +1,28 @@
+SITE DO PRODUTO
+
+1. Edite o nome e a descrição do produto nos dois arquivos HTML.
+2. Coloque seu vídeo em public_html/vsl.mp4. Coloque produto.jpg, detalhe.jpg e uso.jpg
+   em public_html/assets/img/. A galeria carrega esses nomes automaticamente.
+3. Envie o conteúdo de public_html/ para a raiz pública da hospedagem.
+   Use HTTPS e PHP 8 com cURL e sessões habilitados.
+4. Configure GATEWAY_API_TOKEN no ambiente do processo PHP. Use uma
+   nova chave de teste para validar o fluxo e uma nova chave de produção
+   para vender. Mantenha ambas fora de public_html e do ZIP.
+
+O PHP envia POST https://cryptopayr.com/api/v1/payment/create com
+Authorization Bearer e JSON {"amount":49,"currency":"USD"}. O navegador
+abre a checkout_url retornada se ela for HTTPS e usar o host autorizado.
+O host padrão é cryptopayr.com. Se o gateway indicar outro host oficial
+para checkout, configure GATEWAY_CHECKOUT_HOST na hospedagem.
+
+Caso já tenha um receptor de webhook, configure GATEWAY_WEBHOOK_URL
+com o endereço HTTPS real. O PHP inclui webhook_url quando configurado.
+No sandbox, use /api/v1/payment/test-complete com o tid do pagamento
+e status COMPLETED para testar a notificação no seu receptor.
+
+O link gerado fica em cache na sessão por até cinco minutos. Se a API
+falhar ou a conexão expirar, confira a tentativa no painel do gateway.
+O redirecionamento inicia o pagamento. Use o painel ou um webhook
+validado para confirmar o recebimento antes de entregar o produto.
+
+Para mudar o preço, atualize os dois HTMLs e o amount no PHP.
